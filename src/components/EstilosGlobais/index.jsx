@@ -15,6 +15,7 @@ const EstilosGlobais = createGlobalStyle`
     box-sizing: border-box;
     line-height: 1.15; 
     -webkit-text-size-adjust: 100%;
+    font-family: GandhiSansRegular;
   }
   body {
     margin: 0;
