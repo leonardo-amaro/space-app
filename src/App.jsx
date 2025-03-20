@@ -17,6 +17,7 @@ const AppContainer = styled.div`
   max-width: 90%;
 `
 const MainContainer = styled.main`
+  margin-top: 12px;
   display: flex;
   gap: 24px;
 `
