@@ -6,12 +6,14 @@ import Imagens from './Imagens'
 
 const GaleriaContainer = styled.div`
   display: flex;
+  gap: 20px;
 `
 const SecaoFluida = styled.section`
   flex-grow: 1;
 `
 const ImagensContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 `
