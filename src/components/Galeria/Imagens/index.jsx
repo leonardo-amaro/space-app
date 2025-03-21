@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from 'styled-components'
+import BotaoIcone from '../../BotaoIcone'
 
 const Figure = styled.figure`
   width: ${(props) => props.$expandida ? '90%' : '400px'};
@@ -20,6 +21,8 @@ const Figure = styled.figure`
       font-family: 'GandhiSansBold';
     }
     h4 {
+      font-weight: 300;
+      opacity: 0.75;
       flex-grow: 1;
     }
     h3,
@@ -29,15 +32,33 @@ const Figure = styled.figure`
     }
   }
 `
+const Rodape = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
 
-const Imagens = ({ foto }) => {
+const Imagens = ({ foto, expandida = false }) => {
   return (
-    <Figure>
+    <Figure $expandida={expandida} id={`foto-${foto.id}`}>
       <img src={foto.path} alt={`Foto de ${foto.titulo}`} />
       <figcaption>
         <h3>
           {foto.titulo}
         </h3>
+        <Rodape>
+          <h4>
+            {`Fonte: ${foto.fonte}`}
+          </h4>
+          <BotaoIcone>
+            <img src='/icones/favorito.png' alt='Icone de favorito' />
+          </BotaoIcone>
+          { //Renderização condicional
+            !expandida && <BotaoIcone aria-hidden={expandida}>
+              <img src='/icones/expandir.png' alt='Icone de expandir' />
+            </BotaoIcone>
+          }
+        </Rodape>
       </figcaption>
     </Figure>
   )
