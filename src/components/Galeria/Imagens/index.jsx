@@ -38,7 +38,7 @@ const Rodape = styled.footer`
   align-items: center;
 `
 
-const Imagens = ({ foto, expandida = false }) => {
+const Imagens = ({ foto, aoZoomSolicitado, expandida = false }) => {
   return (
     <Figure $expandida={expandida} id={`foto-${foto.id}`}>
       <img src={foto.path} alt={`Foto de ${foto.titulo}`} />
@@ -54,7 +54,7 @@ const Imagens = ({ foto, expandida = false }) => {
             <img src='/icones/favorito.png' alt='Icone de favorito' />
           </BotaoIcone>
           { //Renderização condicional
-            !expandida && <BotaoIcone aria-hidden={expandida}>
+            !expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
               <img src='/icones/expandir.png' alt='Icone de expandir' />
             </BotaoIcone>
           }
