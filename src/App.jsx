@@ -31,8 +31,17 @@ const ConteudoGaleria = styled.section`
 `
 
 const App = () => {
-  const [fotosGaleria] = useState(fotos)
+  const [fotosGaleria, setFotosGaleria] = useState(fotos)
   const [fotoSelecionada, setFotoSelecionada] = useState(null)
+
+  function alternarFavorito(foto) {
+    setFotosGaleria(fotosGaleria.map((fotoAtual) => {
+      return {
+        ...fotoAtual,
+        favorita: fotoAtual.id === foto.id ? !fotoAtual.favorita : fotoAtual.favorita
+      }
+    }))
+  }
 
   return (
     <FundoGradiente>
@@ -48,7 +57,8 @@ const App = () => {
             />
             <Galeria 
               fotos={fotosGaleria}
-              aoFotoSelecionada={(foto) => setFotoSelecionada(foto)} 
+              aoFotoSelecionada={(foto) => setFotoSelecionada(foto)}
+              aoAlternarFavorito={alternarFavorito} 
             />
           </ConteudoGaleria>
         </MainContainer>
