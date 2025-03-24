@@ -3,6 +3,7 @@ import BotaoIcone from '../../BotaoIcone'
 
 const Figure = styled.figure`
   width: ${(props) => props.$expandida ? '100%' : '400px'};
+  position: relative;
   max-width: 100%;
   margin: 0;
   display: flex;
@@ -20,6 +21,9 @@ const Figure = styled.figure`
     padding: 12px;
     box-sizing: border-box;
     border: 2px solid transparent;
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
   figcaption {
     background-color: #001634;
