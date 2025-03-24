@@ -1,5 +1,6 @@
 import { styled } from "styled-components"
 import search from './search.png'
+import { useState } from "react"
 
 const ContainerEstilizado = styled.div`
   position: relative;
@@ -27,13 +28,25 @@ const IconeLupa = styled.img`
   right: 10px;
   width: 38px;
   height: 38px;
+  cursor: pointer;
 `
 
-const CampoTexto = (props) => {
+const CampoTexto = ({ aoBuscar }) => {
+  const [busca, setBusca] = useState('')
+
   return (
     <ContainerEstilizado>
-      <CampoTextoEstilizado placeholder="O que você procura?" {...props} />
-      <IconeLupa src={search} alt="ícone de lupa" />
+      <CampoTextoEstilizado 
+        placeholder="O que você procura?" 
+        type='text'
+        value={busca}
+        onChange={(evento) => setBusca(evento.target.value)}
+      />
+      <IconeLupa 
+        src={search} 
+        alt="ícone de lupa" 
+        onClick={() => aoBuscar(busca)}
+      />
     </ContainerEstilizado>
   )
 }

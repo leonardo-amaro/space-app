@@ -10,11 +10,11 @@ const HeaderEstilizado = styled.header`
   }
 `
 
-const Cabecalho = () => {
+const Cabecalho = ({ aoBuscar }) => {
   return (
     <HeaderEstilizado>
       <img src='/imagens/logo.png' alt='Logo da Space App' />
-      <CampoTexto />
+      <CampoTexto aoBuscar={aoBuscar} />
     </HeaderEstilizado>
   )
 }

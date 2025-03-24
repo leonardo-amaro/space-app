@@ -48,12 +48,17 @@ const App = () => {
       }
     }))
   }
+  function aoBuscar(texto) {
+    if (texto && texto.length >= 3) {
+      console.log(texto)
+    }
+  }
 
   return (
     <FundoGradiente>
       <EstilosGlobais />
       <AppContainer>
-        <Cabecalho />
+        <Cabecalho aoBuscar={aoBuscar} />
         <MainContainer>
           <BarraLateral />
           <ConteudoGaleria>
