@@ -11,6 +11,16 @@ const Figure = styled.figure`
     max-width: 100%;
     border-radius: 20px 20px 0 0;
   }
+  span {
+    font-size: 16px;
+    color: #FFFFFF;
+    background: rgba(217, 217, 217, 0.3);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+  }
   figcaption {
     background-color: #001634;
     border-radius: 0px 0px 20px 20px;
@@ -43,6 +53,7 @@ const Imagens = ({ foto, aoZoomSolicitado, aoAlternarFavorito, expandida = false
 
   return (
     <Figure $expandida={expandida} id={`foto-${foto.id}`}>
+      <span>Tag</span>
       <img src={foto.path} alt={`Foto de ${foto.titulo}`} />
       <figcaption>
         <h3>
