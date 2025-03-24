@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import BotaoIcone from '../../BotaoIcone'
+import tags from '../Tags/tags.json'
 
 const Figure = styled.figure`
   width: ${(props) => props.$expandida ? '100%' : '400px'};
@@ -57,7 +58,9 @@ const Imagens = ({ foto, aoZoomSolicitado, aoAlternarFavorito, expandida = false
 
   return (
     <Figure $expandida={expandida} id={`foto-${foto.id}`}>
-      <span>Tag</span>
+      <span>
+        {tags[foto.tagId].titulo}
+      </span>
       <img src={foto.path} alt={`Foto de ${foto.titulo}`} />
       <figcaption>
         <h3>
