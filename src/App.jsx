@@ -50,7 +50,9 @@ const App = () => {
   }
   function aoBuscar(texto) {
     if (texto && texto.length >= 3) {
-      console.log(texto)
+      setFotosGaleria(fotos.filter(
+        (fotoAtual) => fotoAtual.titulo.includes(texto)
+      ))
     }
   }
 
