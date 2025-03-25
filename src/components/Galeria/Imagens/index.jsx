@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import BotaoIcone from '../../BotaoIcone'
+import tags from '../Tags/tags.json'
 
 const Figure = styled.figure`
   width: ${(props) => props.$expandida ? '100%' : '400px'};
+  position: relative;
   max-width: 100%;
   margin: 0;
   display: flex;
@@ -10,6 +12,19 @@ const Figure = styled.figure`
   & > img {
     max-width: 100%;
     border-radius: 20px 20px 0 0;
+  }
+  span {
+    font-size: 16px;
+    color: #FFFFFF;
+    background: rgba(217, 217, 217, 0.3);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
   figcaption {
     background-color: #001634;
@@ -43,6 +58,9 @@ const Imagens = ({ foto, aoZoomSolicitado, aoAlternarFavorito, expandida = false
 
   return (
     <Figure $expandida={expandida} id={`foto-${foto.id}`}>
+      <span>
+        {tags[foto.tagId].titulo}
+      </span>
       <img src={foto.path} alt={`Foto de ${foto.titulo}`} />
       <figcaption>
         <h3>
