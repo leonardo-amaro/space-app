@@ -30,7 +30,7 @@ const Tag = styled.button`
   }
 `
 
-const Tags = () => {
+const Tags = ({ aoSelecionarTag }) => {
   return (
     <TagsContainer>
       <TagTitulo>
@@ -39,7 +39,7 @@ const Tags = () => {
       <BotaoContainer>
         {tags.map((tag) => {
           return (
-            <Tag key={tag.id}>
+            <Tag key={tag.id} onClick={() => aoSelecionarTag(tag.id)}>
               {tag.titulo}
             </Tag>
           )

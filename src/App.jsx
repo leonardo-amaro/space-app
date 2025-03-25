@@ -55,6 +55,12 @@ const App = () => {
       ))
     }
   }
+  function aoSelecionarTag(id) {
+    if (id === 0) return setFotosGaleria(fotos)
+    setFotosGaleria(fotos.filter(
+      (fotoAtual) => fotoAtual.tagId === id
+    ))
+  }
 
   return (
     <FundoGradiente>
@@ -71,7 +77,8 @@ const App = () => {
             <Galeria 
               fotos={fotosGaleria}
               aoFotoSelecionada={(foto) => setFotoSelecionada(foto)}
-              aoAlternarFavorito={alternarFavorito} 
+              aoAlternarFavorito={alternarFavorito}
+              aoSelecionarTag={aoSelecionarTag} 
             />
           </ConteudoGaleria>
         </MainContainer>

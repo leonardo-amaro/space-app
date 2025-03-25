@@ -18,10 +18,10 @@ const ImagensContainer = styled.div`
   flex-wrap: wrap;
 `
 
-const Galeria = ({ fotos = [], aoFotoSelecionada, aoAlternarFavorito }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada, aoAlternarFavorito, aoSelecionarTag }) => {
   return (
     <>
-      <Tags />
+      <Tags aoSelecionarTag={aoSelecionarTag} />
       <GaleriaContainer>
         <SecaoFluida>
           <Titulo>
